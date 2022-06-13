@@ -43,5 +43,17 @@ function test1() {
     nestRows(sketchContainer, rowContainer);
 }
 
+// Nest two rows into sketch container
+function test2() {
+    const sketchContainer = createSketchContainer();
+
+    for (let i = 0; i < 4; i++) {
+        const rowContainer = createRowContainer();
+        append4SquareDivs(rowContainer);
+        nestRows(sketchContainer, rowContainer);
+    }
+
+}
+
 
 
