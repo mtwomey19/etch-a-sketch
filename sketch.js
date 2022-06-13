@@ -115,6 +115,21 @@ function removeGrid(body, sketchContainer) {
     body.removeChild(sketchContainer);
 }
 
+function test5() {
+    const body = document.querySelector('body');
+    const sketchContainer = createSketchContainer();
+
+    for (let i = 0; i < 4; i++) {
+        const rowContainer = createRowContainer();
+        append4SquareDivs(rowContainer);
+        nestRows(sketchContainer, rowContainer);
+    }
+
+    addFooter(sketchContainer);
+
+    removeGrid(body, sketchContainer);
+}
+
 
 
 
