@@ -1,4 +1,3 @@
-// Create etch-a-sketch container
 function createSketchContainer() {
     const body = document.querySelector('body');
     const sketchContainer = document.createElement('div');
@@ -7,14 +6,12 @@ function createSketchContainer() {
     return sketchContainer;
 }
 
-// Create a row container
 function createRowContainer() {
     const rowContainer = document.createElement('div');
     rowContainer.setAttribute('class', 'row-container');
     return rowContainer;   
 }
 
-// Create 4 child divs
 function append4SquareDivs(rowContainer, numSquares) {
     for (let i = 0; i < numSquares; i++) {
         const squareDiv = document.createElement('div');
@@ -23,12 +20,10 @@ function append4SquareDivs(rowContainer, numSquares) {
     }
 }
 
-// Place row container in sketch container
 function nestRows(sketchContainer, rowContainer) {
     sketchContainer.appendChild(rowContainer);
 }
 
-// Add footer
 function addFooter(sketchContainer) {
     const footer = document.createElement('h3')
     footer.setAttribute('class', 'footer');
