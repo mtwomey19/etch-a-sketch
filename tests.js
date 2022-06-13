@@ -1,3 +1,7 @@
+/*
+These are not 'real' tests. I used them to build the project incrementally.
+*/ 
+
 // Create first row
 function test0() {
     const rowContainer = createRowContainer();
