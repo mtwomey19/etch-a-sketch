@@ -16,8 +16,8 @@ function createRowContainer() {
 }
 
 // Create 4 child divs
-function append4SquareDivs(rowContainer) {
-    for (let i = 0; i < 4; i++) {
+function append4SquareDivs(rowContainer, numSquares) {
+    for (let i = 0; i < numSquares; i++) {
         const squareDiv = document.createElement('div');
         squareDiv.setAttribute('class', 'sq-div');
         rowContainer.appendChild(squareDiv);
@@ -35,60 +35,6 @@ function addFooter(sketchContainer) {
     footer.setAttribute('class', 'footer');
     footer.textContent = 'Etch-a-sketch';
     sketchContainer.appendChild(footer);
-}
-
-
-
-// Create first row
-function test0() {
-    const rowContainer = createRowContainer();
-    create4ChildDivs(rowContainer);
-}
-
-// Nest first row into sketch container
-function test1() {
-    const sketchContainer = createSketchContainer();
-    const rowContainer = createRowContainer();
-    append4SquareDivs(rowContainer);
-    nestRows(sketchContainer, rowContainer);
-}
-
-// Nest two rows into sketch container
-function test2() {
-    const sketchContainer = createSketchContainer();
-
-    for (let i = 0; i < 4; i++) {
-        const rowContainer = createRowContainer();
-        append4SquareDivs(rowContainer);
-        nestRows(sketchContainer, rowContainer);
-    }
-
-    addFooter(sketchContainer);
-}
-
-// Change color of square when clicked
-function test3() {
-    const sketchContainer = createSketchContainer();
-
-    for (let i = 0; i < 4; i++) {
-        const rowContainer = createRowContainer();
-        append4SquareDivs(rowContainer);
-        nestRows(sketchContainer, rowContainer);
-    }
-
-    addFooter(sketchContainer);
-
-    let squares = sketchContainer.getElementsByClassName('sq-div');
-    squares = Array.from(squares);
-    squares.forEach(square => square.addEventListener('mouseover', function changeColor(event) {
-        event.target.style.backgroundColor = 'pink';
-    }));
-}
-
-// Make new sketch pad based on user size input
-function test4() {
-    const newPadBtn = document.getElementById('new-pad-btn');
-    newPadBtn.addEventListener('click', getSizeInput);
 }
 
 function getSizeInput() {
@@ -113,21 +59,6 @@ function checkSizeInput(size) {
 
 function removeGrid(body, sketchContainer) {
     body.removeChild(sketchContainer);
-}
-
-function test5() {
-    const body = document.querySelector('body');
-    const sketchContainer = createSketchContainer();
-
-    for (let i = 0; i < 4; i++) {
-        const rowContainer = createRowContainer();
-        append4SquareDivs(rowContainer);
-        nestRows(sketchContainer, rowContainer);
-    }
-
-    addFooter(sketchContainer);
-
-    removeGrid(body, sketchContainer);
 }
 
 
