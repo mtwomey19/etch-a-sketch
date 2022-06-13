@@ -80,7 +80,7 @@ function test3() {
 
     let squares = sketchContainer.getElementsByClassName('sq-div');
     squares = Array.from(squares);
-    squares.forEach(square => square.addEventListener('click', function changeColor(event) {
+    squares.forEach(square => square.addEventListener('mouseover', function changeColor(event) {
         event.target.style.backgroundColor = 'pink';
     }));
 }
