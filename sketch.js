@@ -3,7 +3,7 @@
 function createSketchContainer() {
     const body = document.querySelector('body');
     const sketchContainer = document.createElement('div');
-    sketchContainer.setAttribute('class', 'sketch-container');
+    sketchContainer.setAttribute('id', 'sketch-container');
     body.appendChild(sketchContainer);
     return sketchContainer;
 }
@@ -57,9 +57,46 @@ function checkSizeInput(size) {
      return checkSizeInput(size);
 }
 
-function removeGrid(body, sketchContainer) {
-    body.removeChild(sketchContainer);
+function removeGrid() {
+    const sketchContainer = document.getElementById('sketch-container');
+    const body = document.querySelector('body');
+    console.log(sketchContainer);
+    if (sketchContainer !== null) {
+        body.removeChild(sketchContainer);
+    }
 }
+
+function createSketchPad() {
+    let sketchContainer = createSketchContainer();
+    let numSquares = getSizeInput();
+
+    for (let i = 0; i < numSquares; i++) {
+        const rowContainer = createRowContainer();
+        append4SquareDivs(rowContainer, numSquares);
+        nestRows(sketchContainer, rowContainer);
+    }
+
+    addFooter(sketchContainer);
+    return sketchContainer;
+}
+
+function colorSquares(sketchContainer) {
+    let squares = sketchContainer.getElementsByClassName('sq-div');
+    squares = Array.from(squares);
+    squares.forEach(square => square.addEventListener('mouseover', function changeColor(event) {
+    event.target.style.backgroundColor = 'pink';
+    }));
+}
+
+function newSketchPad() {
+    removeGrid();
+    const sketchContainer = createSketchPad();
+    colorSquares(sketchContainer);
+}
+
+const newPadBtn = document.getElementById('new-pad-btn');
+newPadBtn.addEventListener('click', newSketchPad);
+
 
 
 
