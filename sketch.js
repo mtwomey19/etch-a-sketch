@@ -29,6 +29,14 @@ function nestRows(sketchContainer, rowContainer) {
     sketchContainer.appendChild(rowContainer);
 }
 
+// Add footer
+function addFooter(sketchContainer) {
+    const footer = document.createElement('h3')
+    footer.setAttribute('class', 'footer');
+    footer.textContent = 'Etch-a-sketch';
+    sketchContainer.appendChild(footer);
+}
+
 // Create first row
 function test0() {
     const rowContainer = createRowContainer();
@@ -53,6 +61,7 @@ function test2() {
         nestRows(sketchContainer, rowContainer);
     }
 
+    addFooter(sketchContainer);
 }
 
 
