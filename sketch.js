@@ -3,6 +3,7 @@
 function createRowContainer() {
     const body = document.querySelector('body');
     const rowContainer = document.createElement('div');
+    rowContainer.setAttribute('class', 'row-container');
     body.appendChild(rowContainer);
     return rowContainer;   
 }
@@ -14,4 +15,9 @@ function create4ChildDivs(rowContainer) {
         squareDiv.setAttribute('class', 'sq-div');
         rowContainer.appendChild(squareDiv);
     }
+}
+
+function test() {
+    const rowContainer = createRowContainer();
+    create4ChildDivs(rowContainer);
 }
