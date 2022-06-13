@@ -37,6 +37,8 @@ function addFooter(sketchContainer) {
     sketchContainer.appendChild(footer);
 }
 
+
+
 // Create first row
 function test0() {
     const rowContainer = createRowContainer();
@@ -64,5 +66,23 @@ function test2() {
     addFooter(sketchContainer);
 }
 
+// Change color of square when clicked
+function test3() {
+    const sketchContainer = createSketchContainer();
+
+    for (let i = 0; i < 4; i++) {
+        const rowContainer = createRowContainer();
+        append4SquareDivs(rowContainer);
+        nestRows(sketchContainer, rowContainer);
+    }
+
+    addFooter(sketchContainer);
+
+    let squares = sketchContainer.getElementsByClassName('sq-div');
+    squares = Array.from(squares);
+    squares.forEach(square => square.addEventListener('click', function changeColor(event) {
+        event.target.style.backgroundColor = 'pink';
+    }));
+}
 
 
