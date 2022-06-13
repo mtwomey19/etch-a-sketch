@@ -1,4 +1,3 @@
-
 // Create etch-a-sketch container
 function createSketchContainer() {
     const body = document.querySelector('body');
@@ -60,7 +59,6 @@ function checkSizeInput(size) {
 function removeGrid() {
     const sketchContainer = document.getElementById('sketch-container');
     const body = document.querySelector('body');
-    console.log(sketchContainer);
     if (sketchContainer !== null) {
         body.removeChild(sketchContainer);
     }
@@ -84,7 +82,7 @@ function colorSquares(sketchContainer) {
     let squares = sketchContainer.getElementsByClassName('sq-div');
     squares = Array.from(squares);
     squares.forEach(square => square.addEventListener('mouseover', function changeColor(event) {
-    event.target.style.backgroundColor = 'pink';
+    event.target.style.backgroundColor = '#b80e65';
     }));
 }
 
@@ -96,8 +94,3 @@ function newSketchPad() {
 
 const newPadBtn = document.getElementById('new-pad-btn');
 newPadBtn.addEventListener('click', newSketchPad);
-
-
-
-
-
