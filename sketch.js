@@ -8,7 +8,7 @@ function createRowContainer() {
 }
 
 // Create 4 child divs
-function create4SquareDivs(rowContainer) {
+function create4ChildDivs(rowContainer) {
     for (let i = 0; i < 4; i++) {
         const squareDiv = document.createElement('div');
         squareDiv.setAttribute('class', 'sq-div');
