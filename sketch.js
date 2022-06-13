@@ -85,4 +85,36 @@ function test3() {
     }));
 }
 
+// Make new sketch pad based on user size input
+function test4() {
+    const newPadBtn = document.getElementById('new-pad-btn');
+    newPadBtn.addEventListener('click', getSizeInput);
+}
+
+function getSizeInput() {
+    let size = prompt('How many squares per side?');
+    let checkedSize = checkSizeInput(size);
+    console.log(checkedSize);
+    return checkedSize;
+}
+
+function checkSizeInput(size) {
+    if (!isNaN(size) && size <= 64) {
+        return size;
+    }
+    if (isNaN(size)) {
+        size = prompt('Please enter a number');
+    } 
+    if (size > 64) {
+        size = prompt('Please enter a number less than or equal to 64');
+    }
+     return checkSizeInput(size);
+}
+
+function removeGrid(body, sketchContainer) {
+    body.removeChild(sketchContainer);
+}
+
+
+
 
